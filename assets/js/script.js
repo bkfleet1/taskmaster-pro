@@ -86,6 +86,18 @@ var index = $(this)
   $(this).replaceWith(taskP);
 });
 
+//Edit Task DUE when clicked. Save when click away
+$(".list-group").on("click", "span", function() {
+  var text = $(this)
+    .text()
+    .trim();
+  var textInput = $("<textarea>")
+  .addClass("form-control")
+  .val(text);
+  $(this).replaceWith(textInput);
+  textInput.trigger("focus");
+});
+
 
 // Edit Task DUE DATE when clicked. SAVE when click away.
 // value of due date was changed
